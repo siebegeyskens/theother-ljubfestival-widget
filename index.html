@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Concert Swipe App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Home / Landing View -->
+    <section id="home-view" class="view">
+      <h1>Welcome to ConcertSwipe</h1>
+      <button id="start-btn">Start Swiping</button>
+    </section>
+
+    <!-- Cards View -->
+    <section id="cards-view" class="view hidden">
+      <div id="cards-container"></div>
+    </section>
+
+    <!-- Popup View -->
+    <section id="popup" class="view hidden">
+      <div class="popup-content">
+        <h2>More Info</h2>
+        <p>Details about the concert...</p>
+        <button id="popup-close">Close</button>
+      </div>
+    </section>
+
+    <!-- Match View -->
+    <section id="match-page" class="view hidden">
+      <h2>🎉 It's a Match!</h2>
+      <button id="go-to-form">Participate</button>
+    </section>
+
+    <!-- TODO: form validation  -->
+    <!-- TODO: only one per email  -->
+    <!-- Form View -->
+    <section id="form-page" class="view hidden">
+      <form id="participation-form" method="post">
+        <div>
+          <label for="name">Name:</label>
+          <input type="text" name="name" id="name" required />
+        </div>
+        <div>
+          <label for="email">Email:</label>
+          <input type="email" name="email" id="email" required />
+        </div>
+        <div>
+          <label for="number">Phone Number:</label>
+          <input type="tel" name="number" id="number" required />
+        </div>
+        <div>
+          <label>
+            <input type="checkbox" name="solo" id="solo" />
+            Participating solo
+          </label>
+        </div>
+        <div>
+          <label>
+            <input
+              type="checkbox"
+              name="agreedTerms"
+              id="agreedTerms"
+              required
+            />
+            I agree to the terms and conditions
+          </label>
+        </div>
+        <div>
+          <label>
+            <input
+              type="checkbox"
+              name="agreedNewsLetter"
+              id="agreedNewsLetter"
+            />
+            Subscribe to the newsletter
+          </label>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+
+    <!-- Success & Error Screens -->
+    <section id="success-screen" class="view hidden">
+      <h2>✅ You're In!</h2>
+    </section>
+
+    <section id="error-screen" class="view hidden">
+      <h2>❌ Something went wrong.</h2>
+    </section>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script> -->
+    <script src="script.js"></script>
+  </body>
+</html>

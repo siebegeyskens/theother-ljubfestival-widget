@@ -7,88 +7,285 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!-- Home / Landing View -->
-    <section id="home-view" class="view">
-      <h1>Welcome to ConcertSwipe</h1>
-      <button id="start-btn">Start Swiping</button>
-    </section>
+    <!-- <img
+      src="./assets/images/card.png"
+      alt="test"
+      style="position: absolute; top: 0; left: 10; z-index: -1"
+    /> -->
 
-    <!-- Cards View -->
-    <section id="cards-view" class="view hidden">
-      <div id="cards-container"></div>
-    </section>
+    <!-- Dummy div representing "Demov" button and its margin bottom -->
+    <div style="height: 90px; background-color: #99000000"></div>
+    <div
+      style="
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        width: 100%;
+      "
+    >
+      <!-- <img src="./assets/images/form.png" alt="test" /> -->
+    </div>
+    <div id="dummy-container">
+      <div id="tinder-widget">
+        <!-- -------- Home View -------- -->
 
-    <!-- Popup View -->
-    <section id="popup" class="view hidden">
-      <div class="popup-content">
-        <h2>More Info</h2>
-        <p>Details about the concert...</p>
-        <button id="popup-close">Close</button>
+        <section id="home-view" class="section-container view hidden">
+          <div class="section-inner-wrapper home-container">
+            <div class="home-text-container">
+              <h1>
+                Pred vami so koncerti 73. <br />
+                Festivala Ljubljana
+              </h1>
+              <p>
+                Če vam je koncert všeč,
+                <strong>swipeajte ali kliknite srček!</strong> <br />
+                Če vam koncert ni všeč, swajpajte ali kliknite križec.
+              </p>
+              <p>
+                Ko se zgodi "Match", imate priložnost sodelovati v nagradni igri
+                za brezplačno vstopnico na koncert in ekskluzivno druženje pred
+                koncertu – kdo ve, morda prav tam srečate nekoga posebnega!
+              </p>
+            </div>
+            <button class="tinder-button" id="start-btn">
+              ZAČNI SWAJPATI!
+            </button>
+          </div>
+        </section>
+
+        <!-- -------- Cards View -------- -->
+
+        <section
+          id="cards-view"
+          class="section-container cards-container hidden"
+        >
+          <div class="section-inner-wrapper">
+            <div id="cards-container"></div>
+            <div id="popup" class="view">
+              <div class="popup-inner-wrapper">
+                <button id="popup-close" class="popup-close-btn">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 384 512"
+                    fill="white"
+                  >
+                    <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                    <path
+                      d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+                    />
+                  </svg>
+                </button>
+                <div class="popup-content">
+                  <p>
+                    <strong><span id="popup-name"></span></strong> <br />
+                    vas pričakuje. <br />
+                    Zagotovite si vstopnico že <strong>zdaj</strong>.
+                  </p>
+                  <a
+                    id="popup-url"
+                    href="#"
+                    target="_blank"
+                    class="tinder-button tinder-button--icon"
+                  >
+                    <img
+                      src="./assets/images/ticket-solid.png"
+                      alt="ticket icon"
+                      width="20"
+                    />
+                    <span>VSTOPNICE</span>
+                  </a>
+                  <p>
+                    Ali pa nadaljujete z raziskovanjem - morda vam naslednji
+                    koncert prinese <strong>posebno nagrado</strong>.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- -------- Popup View -------- -->
+
+        <!-- -------- Match View -------- -->
+
+        <section
+          id="match-page"
+          class="section-container match-container view hidden"
+        >
+          <div class="section-inner-wrapper">
+            <div class="video-bg-container">
+              <video
+                autoplay
+                muted
+                playsinline
+                class="video-bg"
+                src="./assets/video/match.mp4"
+              ></video>
+              <button class="tinder-button tinder-button--icon" id="go-to-form">
+                <img
+                  src="./assets/images/ticket-solid.png"
+                  alt="ticket icon"
+                  width="20"
+                />
+                <span>Sodeluj</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- -------- Form View -------- -->
+
+        <section id="form-page" class="section-container form-page view hidden">
+          <div class="section-inner-wrapper">
+            <!-- <button class="back-btn">Domov</button> -->
+            <div class="form-inner-container">
+              <div class="form-text-container">
+                <p class="form-header">Sodeluj v nagradni igri za:</p>
+                <ul>
+                  <li class="form-page-list">
+                    <strong class="bold"
+                      >Brezplačno vstopnico za koncert</strong
+                    >
+                  </li>
+                  <li class="form-page-list">
+                    <strong>Druženje s pogostitvijo</strong> pred koncertom
+                  </li>
+                  <li class="form-page-list">
+                    Ter možnost, <strong>da najdeš sorodno dušo</strong>
+                  </li>
+                </ul>
+                <p>
+                  Naj se vajina zgodba začne na <br />
+                  <strong
+                    ><span class="uppercase">Ljubljana</span> Festivalu</strong
+                  >.
+                </p>
+              </div>
+              <form id="participation-form" method="post">
+                <div class="form-inputs-container">
+                  <div class="form-item-container">
+                    <label class="form-item-label" for="name"
+                      >Ime in priimek:</label
+                    >
+                    <input
+                      type="text"
+                      name="name"
+                      id="name"
+                      placeholder="vnesite svoj "
+                      class="text-input"
+                    />
+                  </div>
+                  <div class="form-item-container">
+                    <label class="form-item-label" for="number">Telefon:</label>
+                    <input
+                      type="tel"
+                      name="number"
+                      id="number"
+                      placeholder="vnesite svoj telefon"
+                      class="text-input"
+                    />
+                  </div>
+                  <div class="form-item-container">
+                    <label class="form-item-label" for="email"
+                      >e-mail: <span class="required">[obvezno]*</span></label
+                    >
+                    <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      placeholder="vnesite svoj e-naslov"
+                      required
+                      class="text-input"
+                    />
+                  </div>
+                  <div class="form-item-container">
+                    <label class="form-item-label"
+                      >Na koncert prihajam:
+                      <span class="required">[obvezno]*</span></label
+                    >
+                    <div class="form-radio-wrapper">
+                      <div>
+                        <label>
+                          <input
+                            type="radio"
+                            name="attendance"
+                            id="solo"
+                            value="solo"
+                            required
+                            class="checkbox"
+                          />
+                          Sam/a in upam na ljubezen❤️ (nagrada: 1 vstopnica +
+                          mingling)
+                        </label>
+                      </div>
+                      <div>
+                        <label>
+                          <input
+                            type="radio"
+                            name="attendance"
+                            id="together"
+                            value="together"
+                            required
+                            class="checkbox"
+                          />
+                          Že vem, koda bom vzel/a s seboj 🎶(nagrada: 1+1
+                          vstopnica + mingling za oba)
+                        </label>
+                      </div>
+                    </div>
+                    <div class="form-checkbox-wrapper">
+                      <div>
+                        <label>
+                          <input
+                            type="checkbox"
+                            name="terms_accepted"
+                            id="terms"
+                            required
+                            class="checkbox"
+                          />
+                          Strinjam se s
+                          <span style="text-decoration: underline"
+                            >Pravili in pogoji</span
+                          >
+                          sodelovanja v nagradni igri.
+                          <span class="required">[obvezno]*</span>
+                        </label>
+                      </div>
+                      <div>
+                        <label>
+                          <input
+                            type="checkbox"
+                            name="wants_newsletter"
+                            id="newsletter"
+                            class="checkbox"
+                          />
+                          Želim se prijaviti na e-novice Festivala Ljubljana.
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button class="tinder-button" type="submit">
+                  <span>Sodeluj</span>
+                </button>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <!-- -------- Success & Error Screens -------- -->
+
+        <section id="success-screen" class="view hidden">
+          <h2>✅ You're In!</h2>
+        </section>
+        <section id="error-screen" class="view hidden">
+          <p>
+            ❌ Na žalost je prišlo do napake in vaš obrazec ni bil poslan.
+            Poskusite ponovno.
+          </p>
+        </section>
       </div>
-    </section>
-
-    <!-- Match View -->
-    <section id="match-page" class="view hidden">
-      <h2>🎉 It's a Match!</h2>
-      <button id="go-to-form">Participate</button>
-    </section>
-
-    <!-- TODO: form validation  -->
-    <!-- TODO: only one per email  -->
-    <!-- Form View -->
-    <section id="form-page" class="view hidden">
-      <form id="participation-form" method="post">
-        <div>
-          <label for="name">Name:</label>
-          <input type="text" name="name" id="name" required />
-        </div>
-        <div>
-          <label for="email">Email:</label>
-          <input type="email" name="email" id="email" required />
-        </div>
-        <div>
-          <label for="number">Phone Number:</label>
-          <input type="tel" name="number" id="number" required />
-        </div>
-        <div>
-          <label>
-            <input type="checkbox" name="solo" id="solo" />
-            Participating solo
-          </label>
-        </div>
-        <div>
-          <label>
-            <input
-              type="checkbox"
-              name="agreedTerms"
-              id="agreedTerms"
-              required
-            />
-            I agree to the terms and conditions
-          </label>
-        </div>
-        <div>
-          <label>
-            <input
-              type="checkbox"
-              name="agreedNewsLetter"
-              id="agreedNewsLetter"
-            />
-            Subscribe to the newsletter
-          </label>
-        </div>
-        <button type="submit">Submit</button>
-      </form>
-    </section>
-
-    <!-- Success & Error Screens -->
-    <section id="success-screen" class="view hidden">
-      <h2>✅ You're In!</h2>
-    </section>
-
-    <section id="error-screen" class="view hidden">
-      <h2>❌ Something went wrong.</h2>
-    </section>
+    </div>
 
     <!-- <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script> -->
     <script src="script.js"></script>

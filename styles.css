@@ -1,57 +1,381 @@
+/* ========== DUMMY CONTAINERS ========== */
+
 body {
   font-family: sans-serif;
   margin: 0;
   padding: 0;
+  position: relative;
 }
 
-.view {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+#dummy-container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
-.hidden {
+/* ========== COMMON ========== */
+
+@font-face {
+  font-family: "Platform";
+  src: url("assets/fonts/Platform-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Platform";
+  src: url("assets/fonts/Platform-medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Platform";
+  src: url("assets/fonts/Platform-Bold.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+#tinder-widget * {
+  font-family: "Platform";
+  --primary-color: #d6c490;
+  box-sizing: border-box;
+}
+
+#tinder-widget {
+  font-size: 10px;
+}
+
+@media (min-width: 768px) {
+  #tinder-widget {
+    font-size: 12px;
+  }
+}
+
+#tinder-widget .hidden {
   display: none;
 }
 
-#cards-container {
-  position: relative;
-  width: 90%;
-  height: 80vh;
+#tinder-widget .tinder-button {
+  background-color: var(--primary-color);
+  border: none;
+  color: white;
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  padding: 1em 2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-.card {
+#tinder-widget .tinder-button--icon {
+  padding: 0.9em 1.4em;
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
+}
+
+#tinder-widget .tinder-button:hover {
+  background-color: #b2a379;
+}
+
+#tinder-widget .uppercase {
+  text-transform: uppercase;
+}
+
+/* ========== SHARED LAYOUT ========== */
+
+#tinder-widget {
+  position: relative;
+}
+
+#tinder-widget .section-container {
+  margin: 0 24px;
+  /* padding-top: 48px; */
+  /* background-color: rgba(0, 0, 255, 0.052); */
+  border-top: 3px solid var(--primary-color);
+  max-width: 690px;
+  margin: auto;
+}
+
+#tinder-widget .section-inner-wrapper {
+  margin-top: 48px;
+}
+
+/* ========== HOME ========== */
+
+#tinder-widget #home-view .home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+}
+
+#tinder-widget .home-text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  text-wrap: balance;
+}
+
+#tinder-widget .home-text-container p {
+  line-height: 1.2em;
+  font-size: 1.6em;
+}
+
+#tinder-widget .home-text-container p strong {
+  font-size: 1em;
+}
+
+#tinder-widget .home-text-container p:last-child {
+  font-size: 2em;
+}
+
+#tinder-widget #home-view h1 {
+  font-size: 2.4em;
+}
+
+/* ========== EVENT CARDS ========== */
+
+#tinder-widget #cards-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 7/10;
+}
+
+#tinder-widget .cards-container {
+  max-width: 412px;
+}
+
+#tinder-widget #cards-view .section-inner-wrapper {
+  position: relative;
+}
+
+#tinder-widget .card {
   position: absolute;
   width: 100%;
   height: 100%;
+  /* aspect-ratio: 7/10; */
   background-size: cover;
   background-position: center;
-  border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 1rem;
+  padding: 32px 24px;
   color: white;
-  transition: transform 0.3s;
+  box-sizing: border-box;
 }
 
-.card-overlay {
-  background: rgba(0, 0, 0, 0.5);
-  padding: 1rem;
-  border-radius: 8px;
+#tinder-widget .card-overlay {
+  text-shadow: rgba(0, 0, 0, 0.44) 2px 2px 10px;
 }
 
-button {
-  margin: 0.5rem;
-  padding: 0.5rem 1rem;
+#tinder-widget .card-title {
+  text-transform: uppercase;
+  margin: 0;
+  font-size: 2.2em;
 }
 
-.popup-content {
-  background: white;
-  padding: 2rem;
-  border-radius: 8px;
-  color: black;
+#tinder-widget .card-date {
+  margin: 0;
+  font-size: 2.4em;
+  margin-bottom: 32px;
+}
+
+#tinder-widget .card-button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+}
+
+#tinder-widget .card-button {
+  filter: drop-shadow(rgba(0, 0, 0, 0.44) 2px 2px 10px);
+  cursor: pointer;
+}
+
+/* ========== DETAILS POPUP ========== */
+
+#tinder-widget #popup {
+  top: 0;
+  position: absolute;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.683);
+  width: 100%;
+  height: 100%;
+  padding: 28px 24px 40px;
+}
+
+#tinder-widget .match-container {
+  max-width: 412px;
+}
+
+#tinder-widget .popup-inner-wrapper {
+  border: white 2px solid;
+  height: 100%;
+  padding: 24px 32px;
+}
+
+#tinder-widget .popup-close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none;
+  outline: none;
+  width: 36px;
+  float: right;
+  margin-right: -12px;
+}
+
+#tinder-widget .popup-content {
+  margin-top: 68px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+#tinder-widget .popup-content p {
+  font-size: 2.2em;
+  margin: 0;
+}
+
+#tinder-widget .popup-content p:last-child {
+  font-size: 1.8em;
+}
+
+#tinder-widget .popup-content a {
+  align-self: start;
+}
+
+/* ========== MATCH ========== */
+
+#tinder-widget .video-bg-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 7/10;
+  overflow: hidden;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  padding-bottom: 36px;
+  box-sizing: border-box;
+}
+
+#tinder-widget .video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+#tinder-widget #go-to-form {
+  position: relative;
+  z-index: 2;
+}
+
+/* ========== FORM ========== */
+
+#tinder-widget .form-page {
+  /*  */
+}
+
+#tinder-widget .form-inner-container {
+  padding: 10px;
+}
+
+#tinder-widget .form-text-container {
+  font-size: 1.5em;
+  letter-spacing: 0.1em;
+  line-height: 1.4em;
+  margin-bottom: 40px;
+}
+
+#tinder-widget .form-header {
+  margin: 0;
+}
+
+#tinder-widget #form-page ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0;
+}
+
+#tinder-widget .form-inputs-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 1.4em;
+  margin-bottom: 36px;
+}
+
+#tinder-widget .form-item-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#tinder-widget .form-item-label {
+  color: #373737;
+  margin-left: 24px;
+  margin-bottom: 6px;
+}
+
+#tinder-widget .required {
+  color: #fd3d61;
+}
+
+#tinder-widget #form-page .text-input {
+  height: 40px;
+  border: 0.5px solid #37373735;
+  padding-left: 12px;
+  font-size: 1em;
+  max-width: 400px;
+}
+
+/* radio and checkboxes: */
+
+#tinder-widget .form-item-container:last-child {
+  margin-top: 8px;
+}
+
+#tinder-widget .form-item-container:last-child > label {
+  margin-bottom: -2px;
+}
+
+#tinder-widget #form-page .form-radio-wrapper {
+  margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#tinder-widget #form-page .form-checkbox-wrapper {
+  margin-bottom: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+#tinder-widget .form-inputs-container > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#tinder-widget #form-page .checkbox {
+  margin-right: 8px;
+}
+
+#tinder-widget #form-page button {
+  float: right;
 }

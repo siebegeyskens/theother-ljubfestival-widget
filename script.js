@@ -19,23 +19,24 @@ const state = {
       image: "https://picsum.photos/id/1011/600/800",
       title: "Jazz Night",
       date: "June 5",
+      url: "https://maps.google.com/",
     },
     {
       image: "https://picsum.photos/id/1025/600/800",
       title: "Rock Blast",
       date: "June 12",
+      url: "https://maps.google.com/",
     },
     {
       image: "https://picsum.photos/id/1024/600/800",
       title: "Psych fest",
       date: "June 15",
+      url: "https://maps.google.com/",
     },
-    // No match card here!
   ],
   matchIndex: null,
 };
 
-// Fisher-Yates shuffle for better readability
 function shuffleArray(arr) {
   const array = arr.slice();
   for (let i = array.length - 1; i > 0; i--) {
@@ -46,27 +47,22 @@ function shuffleArray(arr) {
 }
 
 function setupConcerts() {
-  // Define the match card here
   const matchCard = {
     image: "https://picsum.photos/id/1035/600/800",
     title: "Mystery Show",
     date: "June 20",
+    url: "https://maps.google.com/",
     isMatch: true,
   };
 
-  // Shuffle the concerts
   const shuffled = shuffleArray(state.concerts);
 
-  // Insert match card at position 1, 2, or 3
   const insertAt = Math.floor(Math.random() * 3) + 1;
   shuffled.splice(insertAt, 0, matchCard);
 
   state.concerts = shuffled;
   state.matchIndex = insertAt;
 }
-
-// Call setupConcerts before starting
-setupConcerts();
 
 const cardsContainer = qs("#cards-container");
 
@@ -75,11 +71,13 @@ function createCard(concert, index) {
   card.className = "card";
   card.style.backgroundImage = `url(${concert.image})`;
   card.innerHTML = `
-    <div class="card-overlay">
-      <h2>${concert.title}</h2>
-      <p>${concert.date}</p>
-      <button class="like-btn">Yes</button>
-      <button class="no-btn">No</button>
+    <div id="card-overlay" class="card-overlay">
+      <h2 class="card-title">${concert.title}</h2>
+      <p class="card-date">${concert.date}</p>
+      <div class="card-button-container">
+          <img src="./assets/images/no.png" alt="no button" width="70" class="no-btn card-button"/>
+          <img src="./assets/images/yes.png" alt="yes button" width="70" class="yes-btn card-button"/>
+      </div>
     </div>
   `;
   card.dataset.index = index;
@@ -94,23 +92,31 @@ function renderNextCard() {
   cardsContainer.appendChild(card);
 }
 
+function updatePopup(concert) {
+  qs("#popup-name").textContent = concert.title;
+  qs("#popup-url").href = concert.url;
+}
+
+function showPopup() {
+  qs(`#popup`).classList.toggle("hidden");
+  qs(`#card-overlay`).classList.toggle("hidden");
+}
+
 function swipeYes() {
   if (state.index === state.matchIndex) {
     showView("match-page");
-    // Remove match card so it can't be seen again
     state.concerts.splice(state.matchIndex, 1);
-    // Adjust index if needed
     if (state.index >= state.concerts.length) state.index = 0;
     state.matchIndex = -1;
   } else {
-    showView("popup");
+    updatePopup(state.concerts[state.index]);
+    showPopup();
   }
 }
 
-function swipeNo() {
+function next() {
   state.index++;
   if (state.index >= state.concerts.length) {
-    // Loop forever
     state.index = 0;
   }
   renderNextCard();
@@ -124,10 +130,10 @@ function initEvents() {
   });
 
   qs("#cards-container").addEventListener("click", (e) => {
-    if (e.target.matches(".like-btn")) {
+    if (e.target.matches(".yes-btn")) {
       swipeYes();
     } else if (e.target.matches(".no-btn")) {
-      swipeNo();
+      next();
     }
   });
 
@@ -135,8 +141,7 @@ function initEvents() {
     if (state.index >= state.concerts.length) {
       state.index = 0;
     } else {
-      state.index++;
-      renderNextCard();
+      next();
       showView("cards-view");
     }
   });
@@ -148,16 +153,8 @@ function initEvents() {
   qs("#participation-form").addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const form = e.target;
-
-    const data = {
-      name: form.name.value,
-      email: form.email.value,
-      number: form.number.value,
-      solo: form.solo.checked,
-      agreedTerms: form.agreedTerms.checked,
-      agreedNewsLetter: form.agreedNewsLetter.checked,
-    };
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData.entries());
 
     try {
       const response = await fetch(
@@ -185,4 +182,14 @@ function initEvents() {
   });
 }
 
+// TODO: delete
+const helper = () => {
+  state.index = 0;
+  renderNextCard();
+  showView("cards-view");
+};
+helper();
+// showPopup();
+
+setupConcerts();
 initEvents();

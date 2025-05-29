@@ -168,6 +168,9 @@
       video.classList.remove("visible"); // Reset in case
       setTimeout(() => {
         video.classList.add("visible");
+        const videoEl = qs("#match-video");
+        videoEl.currentTime = 0;
+        videoEl.play();
       }, 10);
     }
   };

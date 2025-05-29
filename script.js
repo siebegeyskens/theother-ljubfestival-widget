@@ -316,7 +316,6 @@
         </div>
       </div>
     `;
-    console.log("render!");
     qs("#cards-container").appendChild(card);
     qs("#popup-close").addEventListener("click", () => {
       state.showingDetails = false;
@@ -612,7 +611,6 @@
   }
 
   // ========= INITIALIZATION ========= //
-
   preloadImages();
   setupConcerts();
   initEvents();

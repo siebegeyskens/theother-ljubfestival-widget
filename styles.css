@@ -450,6 +450,10 @@
   float: right;
 }
 
+#tinder-widget #form-page .form-rules {
+  color: black;
+}
+
 /* ========== FORM RESPONSE ========== */
 
 #tinder-widget .form-emoticon {

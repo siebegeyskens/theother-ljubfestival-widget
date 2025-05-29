@@ -1,12 +1,5 @@
 /* ========== DUMMY CONTAINERS ========== */
 
-body {
-  font-family: sans-serif;
-  margin: 0;
-  padding: 0;
-  position: relative;
-}
-
 #dummy-container {
   padding-right: 15px;
   padding-left: 15px;
@@ -473,7 +466,7 @@ body {
 
 #tinder-widget .section-response-screen h1 {
   font-size: 3em;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: 0.2em;
   line-height: 1.4;
   margin-bottom: 4px;

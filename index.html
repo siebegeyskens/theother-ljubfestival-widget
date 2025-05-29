@@ -7,107 +7,42 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!-- <img
-      src="./assets/images/card.png"
-      alt="test"
-      style="position: absolute; top: 0; left: 10; z-index: -1"
-    /> -->
-
-    <!-- Dummy div representing "Demov" button and its margin bottom -->
-    <div style="height: 90px; background-color: #99000000"></div>
-    <div
-      style="
-        display: flex;
-        justify-content: center;
-        position: absolute;
-        width: 100%;
-      "
-    >
-      <!-- <img src="./assets/images/form.png" alt="test" /> -->
-    </div>
-    <div id="dummy-container">
-      <div id="tinder-widget">
-        <!-- -------- Home View -------- -->
-
-        <section id="home-view" class="section-container view hidden">
-          <div class="section-inner-wrapper home-container">
-            <div class="home-text-container">
-              <h1>
-                Pred vami so koncerti 73. <br />
-                Festivala Ljubljana
-              </h1>
-              <p>
-                Če vam je koncert všeč,
-                <strong>swipeajte ali kliknite srček!</strong> <br />
-                Če vam koncert ni všeč, swajpajte ali kliknite križec.
-              </p>
-              <p>
-                Ko se zgodi "Match", imate priložnost sodelovati v nagradni igri
-                za brezplačno vstopnico na koncert in ekskluzivno druženje pred
-                koncertu – kdo ve, morda prav tam srečate nekoga posebnega!
-              </p>
-            </div>
-            <button class="tinder-button" id="start-btn">
-              ZAČNI SWAJPATI!
-            </button>
+    <div id="tinder-widget">
+      <!-- -------- Home View -------- -->
+      <section id="home-view" class="section-container view">
+        <div class="section-inner-wrapper home-container">
+          <div class="home-text-container">
+            <h1>
+              Pred vami so koncerti 73. <br />
+              Festivala Ljubljana
+            </h1>
+            <p>
+              Če vam je koncert všeč,
+              <strong>swipeajte ali kliknite srček!</strong> <br />
+              Če vam koncert ni všeč, swajpajte ali kliknite križec.
+            </p>
+            <p>
+              Ko se zgodi "Match", imate priložnost sodelovati v nagradni igri
+              za brezplačno vstopnico na koncert in ekskluzivno druženje pred
+              koncertu – kdo ve, morda prav tam srečate nekoga posebnega!
+            </p>
           </div>
-        </section>
+          <button class="tinder-button" id="start-btn">ZAČNI SWAJPATI!</button>
+        </div>
+      </section>
 
-        <!-- -------- Cards View -------- -->
+      <!-- -------- Cards View -------- -->
 
+      <div class="match-cards-container">
         <section
           id="cards-view"
           class="section-container cards-container hidden"
         >
           <div class="section-inner-wrapper">
             <div id="cards-container"></div>
-            <div id="popup" class="view">
-              <div class="popup-inner-wrapper">
-                <button id="popup-close" class="popup-close-btn">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 384 512"
-                    fill="white"
-                  >
-                    <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
-                    <path
-                      d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
-                    />
-                  </svg>
-                </button>
-                <div class="popup-content">
-                  <p>
-                    <strong><span id="popup-name"></span></strong> <br />
-                    vas pričakuje. <br />
-                    Zagotovite si vstopnico že <strong>zdaj</strong>.
-                  </p>
-                  <a
-                    id="popup-url"
-                    href="#"
-                    target="_blank"
-                    class="tinder-button tinder-button--icon"
-                  >
-                    <img
-                      src="./assets/images/ticket-solid.png"
-                      alt="ticket icon"
-                      width="20"
-                    />
-                    <span>VSTOPNICE</span>
-                  </a>
-                  <p>
-                    Ali pa nadaljujete z raziskovanjem - morda vam naslednji
-                    koncert prinese <strong>posebno nagrado</strong>.
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
         </section>
-
-        <!-- -------- Popup View -------- -->
-
         <!-- -------- Match View -------- -->
-
         <section
           id="match-page"
           class="section-container match-container view hidden"
@@ -126,168 +61,210 @@
                   src="./assets/images/ticket-solid.png"
                   alt="ticket icon"
                   width="20"
+                  draggable="false"
                 />
                 <span>Sodeluj</span>
               </button>
             </div>
           </div>
         </section>
+      </div>
 
-        <!-- -------- Form View -------- -->
+      <!-- -------- Form View -------- -->
 
-        <section id="form-page" class="section-container form-page view hidden">
-          <div class="section-inner-wrapper">
-            <!-- <button class="back-btn">Domov</button> -->
-            <div class="form-inner-container">
-              <div class="form-text-container">
-                <p class="form-header">Sodeluj v nagradni igri za:</p>
-                <ul>
-                  <li class="form-page-list">
-                    <strong class="bold"
-                      >Brezplačno vstopnico za koncert</strong
-                    >
-                  </li>
-                  <li class="form-page-list">
-                    <strong>Druženje s pogostitvijo</strong> pred koncertom
-                  </li>
-                  <li class="form-page-list">
-                    Ter možnost, <strong>da najdeš sorodno dušo</strong>
-                  </li>
-                </ul>
-                <p>
-                  Naj se vajina zgodba začne na <br />
-                  <strong
-                    ><span class="uppercase">Ljubljana</span> Festivalu</strong
-                  >.
-                </p>
-              </div>
-              <form id="participation-form" method="post">
-                <div class="form-inputs-container">
-                  <div class="form-item-container">
-                    <label class="form-item-label" for="name"
-                      >Ime in priimek:</label
-                    >
-                    <input
-                      type="text"
-                      name="name"
-                      id="name"
-                      placeholder="vnesite svoj "
-                      class="text-input"
-                    />
-                  </div>
-                  <div class="form-item-container">
-                    <label class="form-item-label" for="number">Telefon:</label>
-                    <input
-                      type="tel"
-                      name="number"
-                      id="number"
-                      placeholder="vnesite svoj telefon"
-                      class="text-input"
-                    />
-                  </div>
-                  <div class="form-item-container">
-                    <label class="form-item-label" for="email"
-                      >e-mail: <span class="required">[obvezno]*</span></label
-                    >
-                    <input
-                      type="email"
-                      name="email"
-                      id="email"
-                      placeholder="vnesite svoj e-naslov"
-                      required
-                      class="text-input"
-                    />
-                  </div>
-                  <div class="form-item-container">
-                    <label class="form-item-label"
-                      >Na koncert prihajam:
-                      <span class="required">[obvezno]*</span></label
-                    >
-                    <div class="form-radio-wrapper">
-                      <div>
-                        <label>
-                          <input
-                            type="radio"
-                            name="attendance"
-                            id="solo"
-                            value="solo"
-                            required
-                            class="checkbox"
-                          />
-                          Sam/a in upam na ljubezen❤️ (nagrada: 1 vstopnica +
-                          mingling)
-                        </label>
-                      </div>
-                      <div>
-                        <label>
-                          <input
-                            type="radio"
-                            name="attendance"
-                            id="together"
-                            value="together"
-                            required
-                            class="checkbox"
-                          />
-                          Že vem, koda bom vzel/a s seboj 🎶(nagrada: 1+1
-                          vstopnica + mingling za oba)
-                        </label>
-                      </div>
+      <section id="form-page" class="section-container form-page view hidden">
+        <div class="section-inner-wrapper">
+          <div class="form-inner-container">
+            <button id="form-close" class="form-close-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                <path
+                  d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+                />
+              </svg>
+            </button>
+            <div class="form-text-container">
+              <p class="form-header">Sodeluj v nagradni igri za:</p>
+              <ul>
+                <li class="form-page-list">
+                  <strong class="bold">Brezplačno vstopnico za koncert</strong>
+                </li>
+                <li class="form-page-list">
+                  <strong>Druženje s pogostitvijo</strong> pred koncertom
+                </li>
+                <li class="form-page-list">
+                  Ter možnost, <strong>da najdeš sorodno dušo</strong>
+                </li>
+              </ul>
+              <p>
+                Naj se vajina zgodba začne na <br />
+                <strong
+                  ><span class="uppercase">Ljubljana</span> Festivalu</strong
+                >.
+              </p>
+            </div>
+            <form id="participation-form" method="post">
+              <div class="form-inputs-container">
+                <div class="form-item-container">
+                  <label class="form-item-label" for="name"
+                    >Ime in priimek:</label
+                  >
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    placeholder="vnesite svoj "
+                    class="text-input"
+                  />
+                </div>
+                <div class="form-item-container">
+                  <label class="form-item-label" for="number">Telefon:</label>
+                  <input
+                    type="tel"
+                    name="number"
+                    id="number"
+                    placeholder="vnesite svoj telefon"
+                    class="text-input"
+                  />
+                </div>
+                <div class="form-item-container">
+                  <label class="form-item-label" for="email"
+                    >e-mail: <span class="required">[obvezno]*</span></label
+                  >
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="vnesite svoj e-naslov"
+                    required
+                    class="text-input"
+                  />
+                </div>
+                <div class="form-item-container">
+                  <label class="form-item-label"
+                    >Na koncert prihajam:
+                    <span class="required">[obvezno]*</span></label
+                  >
+                  <div class="form-radio-wrapper">
+                    <div>
+                      <label>
+                        <input
+                          type="radio"
+                          name="attendance"
+                          id="solo"
+                          value="solo"
+                          required
+                          class="checkbox"
+                        />
+                        Sam/a in upam na ljubezen❤️ (nagrada: 1 vstopnica +
+                        mingling)
+                      </label>
                     </div>
-                    <div class="form-checkbox-wrapper">
-                      <div>
-                        <label>
-                          <input
-                            type="checkbox"
-                            name="terms_accepted"
-                            id="terms"
-                            required
-                            class="checkbox"
-                          />
-                          Strinjam se s
-                          <span style="text-decoration: underline"
-                            >Pravili in pogoji</span
-                          >
-                          sodelovanja v nagradni igri.
-                          <span class="required">[obvezno]*</span>
-                        </label>
-                      </div>
-                      <div>
-                        <label>
-                          <input
-                            type="checkbox"
-                            name="wants_newsletter"
-                            id="newsletter"
-                            class="checkbox"
-                          />
-                          Želim se prijaviti na e-novice Festivala Ljubljana.
-                        </label>
-                      </div>
+                    <div>
+                      <label>
+                        <input
+                          type="radio"
+                          name="attendance"
+                          id="together"
+                          value="together"
+                          required
+                          class="checkbox"
+                        />
+                        Že vem, koda bom vzel/a s seboj 🎶(nagrada: 1+1
+                        vstopnica + mingling za oba)
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-checkbox-wrapper">
+                    <div>
+                      <label>
+                        <input
+                          type="checkbox"
+                          name="terms_accepted"
+                          id="terms"
+                          required
+                          class="checkbox"
+                        />
+                        Strinjam se s
+                        <span style="text-decoration: underline"
+                          >Pravili in pogoji</span
+                        >
+                        sodelovanja v nagradni igri.
+                        <span class="required">[obvezno]*</span>
+                      </label>
+                    </div>
+                    <div>
+                      <label>
+                        <input
+                          type="checkbox"
+                          name="wants_newsletter"
+                          id="newsletter"
+                          class="checkbox"
+                        />
+                        Želim se prijaviti na e-novice Festivala Ljubljana.
+                      </label>
                     </div>
                   </div>
                 </div>
-                <button class="tinder-button" type="submit">
-                  <span>Sodeluj</span>
-                </button>
-              </form>
-            </div>
+              </div>
+              <button class="tinder-button" type="submit">
+                <span>Sodeluj</span>
+              </button>
+            </form>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <!-- -------- Success & Error Screens -------- -->
+      <!-- -------- Success & Error Screens -------- -->
 
-        <section id="success-screen" class="view hidden">
-          <h2>✅ You're In!</h2>
-        </section>
-        <section id="error-screen" class="view hidden">
+      <section
+        id="success-screen"
+        class="section-response-screen form-response-screen view section-container hidden"
+      >
+        <div class="section-inner-wrapper" id="tinder-widget">
+          <span class="form-emoticon">🎉</span>
+          <h1>Uspešna prijava!</h1>
           <p>
-            ❌ Na žalost je prišlo do napake in vaš obrazec ni bil poslan.
-            Poskusite ponovno.
+            Hvala, ker si se prijavil/-a na našo nagradno igro za brezplačen
+            sedež na koncertu! 🎶 <br />
+            <strong>Tvoja prijava je bila uspešno oddana.</strong>
           </p>
-        </section>
-      </div>
+          <p>
+            Zmagovalca bomo izžrebali 24. 6. 2025, zato redno spremljaj svoj
+            e-poštni naslov -
+            <strong>
+              morda boš prav ti tisti/-a, ki bo dobil/-a priložnost spoznati
+              novo ljubezen!
+            </strong>
+          </p>
+          <a
+            href="https://ljubljanafestival.si/koledar/dogodki-ljubljana-festival/"
+            class="tinder-button"
+          >
+            73. Ljubljana Festival
+          </a>
+        </div>
+      </section>
+      <section
+        id="error-screen"
+        class="section-response-screen form-response-screen view section-container hidden"
+      >
+        <div class="section-inner-wrapper" id="tinder-widget">
+          <span class="form-emoticon">😟</span>
+          <h1>Ups! Nekaj je šlo narobe</h1>
+          <p>
+            Žal nam ni uspelo oddati tvoje prijave za sodelovanje v nagradni
+            igri<br />🔁 Poskusi znova čez nekaj trenutkov. <br />📶 Preveri
+            svojo internetno povezavo.
+          </p>
+
+          <button class="tinder-button" id="error-to-start">
+            Poskusi znova
+          </button>
+        </div>
+      </section>
     </div>
 
-    <!-- <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script> -->
     <script src="script.js"></script>
   </body>
 </html>

@@ -9,7 +9,14 @@
     index: 0,
     concerts: [
       {
-        image: "./assets/images/la-fura.jpg",
+        image1x: "./assets/images/spanish-600.jpg",
+        image2x: "./assets/images/spanish-1200.jpg",
+        title: "Španska romanca",
+        date: "30. julij 2025 ob 20.00",
+        url: "https://www.eventim.si/event/ensemble-dissonance-mak-grgic-krizanke-20150267/?affiliate=S1J",
+        backgroundPosition: "40% 50%",
+      },
+      {
         image1x: "./assets/images/la-fura-600.jpg",
         image2x: "./assets/images/la-fura-1200.jpg",
         title: "Joseph Haydn: STVARJENJE",
@@ -17,15 +24,6 @@
         url: "https://www.eventim.si/event/j-haydn-stvarjenje-cankarjev-dom-20152650/?affiliate=S1J",
       },
       {
-        image: "./assets/images/adda-flamenco.jpeg",
-        image1x: "./assets/images/adda-flamenco-600.jpeg",
-        image2x: "./assets/images/adda-flamenco-1200.jpeg",
-        title: "El Amor Brujo",
-        date: "2. julij 2025 ob 20.00",
-        url: "https://www.eventim.si/event/el-amor-brujo-cankarjev-dom-20152582/?affiliate=S1J",
-      },
-      {
-        image: "./assets/images/duke_ellington.jpg",
         image1x: "./assets/images/duke_ellington-600.jpg",
         image2x: "./assets/images/duke_ellington-1200.jpg",
         title: "The Duke Ellington Orchestra",
@@ -33,15 +31,13 @@
         url: "https://www.eventim.si/event/the-duke-ellington-orchestra-krizanke-20152564/?affiliate=S1J",
       },
       {
-        image: "./assets/images/POTO_1300X800.jpg",
-        image1x: "./assets/images/POTO_1300X800-600.jpg",
-        image2x: "./assets/images/POTO_1300X800-1200.jpg",
+        image1x: "./assets/images/POTP-600.jpg",
+        image2x: "./assets/images/POTP-1200.jpg",
         title: "Fantom iz opere",
         date: "9. julij 2025 ob 20.00",
         url: "https://www.eventim.si/artist/phantom-of-the-opera/",
       },
       {
-        image: "./assets/images/EuroCubanAllstars-4.jpg",
         image1x: "./assets/images/EuroCubanAllstars-4-600.jpg",
         image2x: "./assets/images/EuroCubanAllstars-4-1200.jpg",
         title: "Večer z legendami kubanske glasbe",
@@ -49,15 +45,14 @@
         url: "https://www.eventim.si/event/ljubljana-festival-vecer-z-legendami-kubanske-glasbe-krizanke-20253116/?affiliate=S1J",
       },
       {
-        image: "./assets/images/WEBSITE-BANNER-VICENTE-1300x800-1.jpg",
-        image1x: "./assets/images/WEBSITE-BANNER-VICENTE-1300x800-1-600.jpg",
-        image2x: "./assets/images/WEBSITE-BANNER-VICENTE-1300x800-1-1200.jpg",
+        image1x: "./assets/images/Vicente-Amigo-600.jpg",
+        image2x: "./assets/images/Vicente-Amigo-1200.jpg",
         title: "Vicente Amigo, flamenko kitara",
         date: "14. julij 2025 ob 21.00",
         url: "https://www.eventim.si/event/ljubljana-festival-vicente-amigo-spanski-kitarist-flamenka-krizanke-20189482/?affiliate=S1J",
+        backgroundPosition: "30% 50%",
       },
       {
-        image: "./assets/images/ROBBEN-FORD-NET-BOOKLET-EVENTIM-PHOTO.jpg",
         image1x:
           "./assets/images/ROBBEN-FORD-NET-BOOKLET-EVENTIM-PHOTO-600.jpg",
         image2x:
@@ -68,7 +63,6 @@
         backgroundPosition: "100% 50%",
       },
       {
-        image: "./assets/images/Goran-Bojcevski-foto-Kristjan-Smigoc.jpg",
         image1x: "./assets/images/Goran-Bojcevski-foto-Kristjan-Smigoc-600.jpg",
         image2x:
           "./assets/images/Goran-Bojcevski-foto-Kristjan-Smigoc-1200.jpg",
@@ -77,7 +71,6 @@
         url: "https://www.eventim.si/event/goran-bojcevski-krizanke-20145391/?affiliate=S1J",
       },
       {
-        image: "./assets/images/Rade-3-za-Krizanke.jpeg",
         image1x: "./assets/images/Rade-3-za-Krizanke-600.jpeg",
         image2x: "./assets/images/Rade-3-za-Krizanke-1200.jpeg",
         title: "Rade Šerbedžija",
@@ -85,15 +78,14 @@
         url: "https://www.eventim.si/event/moj-klobuk-ima-tri-luknje-krizanke-20145382/?affiliate=S1J",
       },
       {
-        image: "./assets/images/BIGBAND-HAMOTRIBUTE2LOVE-1300x800px.jpg",
-        image1x: "./assets/images/BIGBAND-HAMOTRIBUTE2LOVE-1300x800px-600.jpg",
-        image2x: "./assets/images/BIGBAND-HAMOTRIBUTE2LOVE-1300x800px-1200.jpg",
+        image1x: "./assets/images/Hamo-600.jpg",
+        image2x: "./assets/images/Hamo-1200.jpg",
         title: "Hamo & Tribute 2 Love",
         date: "28. avgust 2025 ob 20.30",
         url: "https://www.eventim.si/event/hamo-tribute-2-love-krizanke-20145309/?affiliate=S1J",
+        backgroundPosition: "48% 50%",
       },
       {
-        image: "./assets/images/kreslin.jpg",
         image1x: "./assets/images/kreslin-600.jpg",
         image2x: "./assets/images/kreslin-1200.jpg",
         title: "Vlado Kreslin",
@@ -102,18 +94,14 @@
         backgroundPosition: "22% 50%",
       },
       {
-        image:
-          "./assets/images/73LF_bannerji_900x528px_Les_Miserables_naslov.jpg",
-        image1x:
-          "./assets/images/73LF_bannerji_900x528px_Les_Miserables_naslov-600.jpg",
-        image2x:
-          "./assets/images/73LF_bannerji_900x528px_Les_Miserables_naslov-1200.jpg",
+        image1x: "./assets/images/Les_Miserables-600.jpg",
+        image2x: "./assets/images/Les_Miserables-1200.jpg",
         title: "Nesrečniki",
         date: "4. september 2025 ob 20.00",
         url: "https://www.eventim.si/artist/ljubljana-festival/les-miserables-muzikal-3877424/?affiliate=S1J",
+        backgroundPosition: "46% 50%",
       },
       {
-        image: "./assets/images/ottelo.jpg",
         image1x: "./assets/images/ottelo-600.jpg",
         image2x: "./assets/images/ottelo-1200.jpg",
         title: "Giuseppe Verdi: OTELLO",
@@ -122,7 +110,6 @@
         backgroundPosition: "49% 50%",
       },
       {
-        image: "./assets/images/dunajski-filharmoniki.jpg",
         image1x: "./assets/images/dunajski-filharmoniki-600.jpg",
         image2x: "./assets/images/dunajski-filharmoniki-1200.jpg",
         title: "Dunajski filharmoniki",
@@ -130,7 +117,6 @@
         url: "https://www.eventim.si/event/dunajski-filharmoniki-cankarjev-dom-20142387/?affiliate=S1J",
       },
       {
-        image: "./assets/images/Netrebko-Ejvazov.jpg",
         image1x: "./assets/images/Netrebko-Ejvazov-600.jpg",
         image2x: "./assets/images/Netrebko-Ejvazov-1200.jpg",
         title: "Anna Netrebko & Yusif Eyvazov",
@@ -190,8 +176,8 @@
     const urls = state.concerts.map((c) => c[key]);
     urls.push(
       isRetina
-        ? "./assets/images/concert-match-1200.jpg"
-        : "./assets/images/concert-match-600.jpg"
+        ? "./assets/images/concert-match-1200.jpeg"
+        : "./assets/images/concert-match-600.jpeg"
     );
     urls.forEach((url) => {
       const img = new Image();
@@ -207,13 +193,12 @@
     const shuffled = shuffleArray(state.concerts);
 
     const matchCard = {
-      image1x: "./assets/images/concert-match-600.jpg",
-      image2x: "./assets/images/concert-match-1200.jpg",
-      title: "Španska romanca",
-      date: "30. julij 2025 ob 20.00",
-      url: "https://www.eventim.si/event/ensemble-dissonance-mak-grgic-krizanke-20150267/?affiliate=S1J",
+      image1x: "./assets/images/concert-match-600.jpeg",
+      image2x: "./assets/images/concert-match-1200.jpeg",
+      title: "El Amor Brujo",
+      date: "2. julij 2025 ob 20.00",
+      url: "https://www.eventim.si/event/el-amor-brujo-cankarjev-dom-20152582/?affiliate=S1J",
       isMatch: true,
-      backgroundPosition: "40% 50%",
     };
 
     const firstInsertAt = Math.floor(Math.random() * 2) + 1;
@@ -306,7 +291,7 @@
                 alt="ticket icon"
                 width="20"
               />
-              <span>VSTOPNICE</span>
+              <span>SODELUJTE</span>
             </a>
             <p>
               Ali pa nadaljujete z raziskovanjem - morda vam naslednji

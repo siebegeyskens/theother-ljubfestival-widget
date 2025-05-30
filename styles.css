@@ -446,8 +446,9 @@
   margin-right: 8px;
 }
 
-#tinder-widget #form-page button {
-  float: right;
+#tinder-widget #form-page .form-button-wrapper {
+  display: flex;
+  justify-content: right;
 }
 
 #tinder-widget #form-page .form-rules {
@@ -497,8 +498,8 @@
     font-size: 12px;
   }
 
-  #tinder-widget #form-page button:last-child {
-    float: left;
+  #tinder-widget #form-page .form-button-wrapper {
     margin-top: 16px;
+    justify-content: left;
   }
 }
